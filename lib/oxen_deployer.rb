@@ -60,7 +60,7 @@ module OxenDeployer
       recipe = recipes[flavor]
       next if recipe.nil? or flavor == :config
       begin
-        require "Deployer/#{recipe}"
+        require "oxen_deployer/#{recipe}"
       rescue LoadError => e
         re = RuntimeError.new e.message
         re.backtrace = e.backtrace
